@@ -17,26 +17,15 @@ public class Mamifero {
 	}
 	
 	public boolean tieneComoAncestroA(Mamifero unMamifero) {
-		boolean es = false;
-		if(this.getMadre() != null) {
-			es = tieneComoAncestroA(unMamifero, this.getMadre());
-		}
-		if( (this.getPadre() != null) && (! es) ) {
-			es = tieneComoAncestroA(unMamifero, this.getPadre());
-		}
-		return es;
-	}
-	
-	private boolean tieneComoAncestroA(Mamifero unMamifero, Mamifero xadre) {
-		if(xadre.getIdentificador().equals(unMamifero.getIdentificador())) {
+		if(unMamifero.equals(this.getMadre()) || unMamifero.equals(this.getPadre())) {
 			return true;
 		} else {
 			boolean es = false;
-			if(xadre.getMadre() != null) {
-				es = tieneComoAncestroA(unMamifero, xadre.getMadre());
+			if(this.getMadre() != null) {
+				es = this.getMadre().tieneComoAncestroA(unMamifero);
 			}
-			if( (xadre.getPadre() != null) && (! es) ) {
-				es = tieneComoAncestroA(unMamifero, xadre.getPadre());
+			if( (this.getPadre() != null) && (! es) ) {
+				es = this.getPadre().tieneComoAncestroA(unMamifero);
 			}
 			return es;
 		}
@@ -83,35 +72,44 @@ public class Mamifero {
 	}
 	
 	public Mamifero getAbuelaMaterna() {
+		return this.getMadre() != null ? (this.getMadre()).getMadre() : null;
+		/*
 		if(this.getMadre() != null)
 			return (this.getMadre()).getMadre();
 		else return null;
 		
-		//return (this.getMadre()).getMadre(); 
+		return (this.getMadre()).getMadre();*/ 
 	}
 	
 	public Mamifero getAbuelaPaterna() {
+		return (this.getPadre() != null) ? (this.getPadre()).getMadre() : null;
+		
+		/*
 		if(this.getPadre() != null)
 			return (this.getPadre()).getMadre();
 		else return null;
 		
-		//return (this.getPadre()).getMadre();
+		return (this.getPadre()).getMadre();*/
 	}
 	
 	public Mamifero getAbueloMaterno() {
+		return (this.getMadre() != null) ? (this.getMadre()).getPadre() : null;
+		/*
 		if(this.getMadre() != null)
 			return (this.getMadre()).getPadre();
 		else return null;
 		
-		//return (this.getMadre()).getPadre();
+		return (this.getMadre()).getPadre();*/
 	}
 	
 	public Mamifero getAbueloPaterno() {
+		return (this.getPadre() != null) ? (this.getPadre()).getPadre() : null;
+		/*
 		if(this.getPadre() != null)
 			return (this.getPadre()).getPadre();
 		else return null;
 		
-		//return (this.getPadre()).getPadre();
+		return (this.getPadre()).getPadre();*/
 	}
 	
 	
