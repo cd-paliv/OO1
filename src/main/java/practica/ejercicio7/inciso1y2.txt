@@ -1,7 +1,7 @@
 1. Liste los métodos que son ejecutados como resultado del envío del último mensaje (por ejemplo,
 	método #aportes de la clase X, ...).
 
-	--Gerente alan = new Gerente("Alan Turing");-- se ejecuta el constructor de Gerente
+	--Gerente alan = new Gerente("Alan Turing");--
 	    ➥constructor de Empleado, constructor de EmpleadoJerarquico, constructor de Gerente.
 	--double aportesDeAlan = alan.aportes();    --
 	    ➥método aportes de Gerente, el cual llama al método montoBásico para realizar el cálculo
