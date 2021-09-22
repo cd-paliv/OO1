@@ -2,13 +2,13 @@
 	método #aportes de la clase X, ...).
 
 	--Gerente alan = new Gerente("Alan Turing");-- se ejecuta el constructor de Gerente
-	    ➥constructor de Gerente, constructor de EmpleadoJerarquico, constructor de Empleado.
+	    ➥constructor de Empleado, constructor de EmpleadoJerarquico, constructor de Gerente.
 	--double aportesDeAlan = alan.aportes();    --
 	    ➥método aportes de Gerente, el cual llama al método montoBásico para realizar el cálculo
 		a retornar.
 
 	--Gerente alan = new Gerente("Alan Turing");      --
-	    ➥constructor de Gerente, constructor de EmpleadoJerarquico, constructor de Empleado.
+	    ➥constructor de Empleado, constructor de EmpleadoJerarquico, constructor de Gerente.
 	--double sueldoBasicoDeAlan = alan.sueldoBasico();--
 	    ➥busca sueldoBasico en Gerente y no lo encuentra, por lo cual ejecuta el de
 		EmpleadoJerarquico, el cual ejecuta bonoPorCategoria() de la misma clase y
@@ -19,5 +19,5 @@
 	--aportesDeAlan = this.montoBasico() * 0.05d = 57.000 * 0.05d = 2.850
 
 	--sueldoBasicoDeAlan = super.sueldoBasico() + this.bonoPorCategoria()
-			     = (this.montoBasico() * this.aportes()) + 8.000  //método de instancia actual
+			     = (this.montoBasico() + this.aportes()) + 8.000  //método de instancia actual
 			     = (57.000 + 2.850) + 8.000 = 67.850
