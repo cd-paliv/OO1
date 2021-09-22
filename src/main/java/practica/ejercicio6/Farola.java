@@ -11,7 +11,7 @@ public class Farola {
 	* Crear una farola. Debe inicializarla como apagada
 	*/
 	public Farola () {
-		this.setOn(false);
+		this.on = false;
 		this.vecinos = new ArrayList<Farola>();
 	}
 
@@ -20,9 +20,13 @@ public class Farola {
 	*/
 	public void pairWithNeighbor(Farola otraFarola) {
 		if(! this.getNeighbors().contains(otraFarola)) {
-			vecinos.add(otraFarola);
-			otraFarola.getNeighbors().add(this);
+			this.addFarola(otraFarola);
+			otraFarola.addFarola(this);
 		}
+	}
+	
+	public void addFarola(Farola f) {
+		vecinos.add(f);
 	}
 
 	/*
@@ -37,7 +41,7 @@ public class Farola {
 	*/
 	public void turnOn() {
 		if(! this.isOn()) {
-			this.setOn(true);
+			this.on = true;
 			vecinos.stream().forEach(vecinos -> vecinos.turnOn());
 			
 		}
@@ -48,7 +52,7 @@ public class Farola {
 	*/
 	public void turnOff() {
 		if(this.isOn()) {
-			this.setOn(false);
+			this.on = false;
 			vecinos.stream().forEach(vecinos -> vecinos.turnOff());
 		}
 	}
@@ -59,11 +63,5 @@ public class Farola {
 	public boolean isOn() {
 		return on;
 	}
-	
-	private void setOn(boolean on) {
-		this.on = on;
-	}
-	
-	
 
 }

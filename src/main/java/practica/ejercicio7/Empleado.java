@@ -19,7 +19,7 @@ public class Empleado {
 	}
 	
 	public double sueldoBasico() {
-		return this.montoBasico() * this.aportes();
+		return this.montoBasico() + this.aportes();
 	}
 
 	public String getNombre() {
