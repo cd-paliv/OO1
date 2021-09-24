@@ -36,7 +36,7 @@ public class Usuario {
 	
 	
 	private Optional<Consumo> ultimoConsumoAsOptional(){
-		return (_consumos.stream().max( (Consumo c1, Consumo c2) -> c1.getFecha().compareTo(c2.getFecha())));
+		return (_consumos.stream().max( (Consumo c1, Consumo c2) -> c1.getFecha().compareTo(c2.getFecha()) ) );
 	}
 	public double ultimoConsumoActiva() {
 		return this.ultimoConsumoAsOptional().map((Consumo c1) -> c1.getConsumoEnergiaActiva()).orElse(0d);
