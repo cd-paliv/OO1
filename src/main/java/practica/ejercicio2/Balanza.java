@@ -17,6 +17,7 @@ public class Balanza {
 		
 	}
 	
+	//tarea 1
 	public ArrayList<Producto> getProductos(){
 		return productos;
 	}

@@ -27,6 +27,7 @@ public abstract class Cuenta {
 		}
 		return false;
 	}
+	
 	protected abstract boolean puedeExtraer(double monto);
 	
 	public boolean transferirACuenta(double monto, Cuenta cuentaDestino) {

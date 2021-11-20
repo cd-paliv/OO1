@@ -11,6 +11,6 @@ public class CajaDeAhorro extends Cuenta{
 	}
 	
 	protected void extraerSinControlar(double monto) {
-		super.extraerSinControlar(montoConAdicional(monto));;
+		super.extraerSinControlar(montoConAdicional(monto));
 	}
 }

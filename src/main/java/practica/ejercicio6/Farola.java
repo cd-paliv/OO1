@@ -43,7 +43,6 @@ public class Farola {
 		if(! this.isOn()) {
 			this.on = true;
 			vecinos.stream().forEach(vecinos -> vecinos.turnOn());
-			
 		}
 	}
 

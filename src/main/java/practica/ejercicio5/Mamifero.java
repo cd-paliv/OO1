@@ -17,7 +17,7 @@ public class Mamifero {
 	}
 	
 	public boolean tieneComoAncestroA(Mamifero unMamifero) {
-		if(unMamifero.equals(this.getMadre()) || unMamifero.equals(this.getPadre())) {
+		if( unMamifero.equals(this.getMadre()) || unMamifero.equals(this.getPadre()) ) {
 			return true;
 		} else {
 			boolean es = false;
