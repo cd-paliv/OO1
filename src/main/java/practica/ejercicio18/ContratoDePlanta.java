@@ -28,16 +28,15 @@ public class ContratoDePlanta extends Contrato {
 
 	@Override
 	public double getMontoACobrar() {
-		double total=this.sueldo;		
-		if(empleado.tieneConyuge()) {
-			total+=this.getMontoConyuge();
-		}
-		if(empleado.tieneHijos()) {
-			total+=this.getMontoHijos();
-		}
+		double total=this.sueldo;
 		
-		long antiguedad = ChronoUnit.DAYS.between(LocalDate.now(), empleado.getFechaInicio());
-		total += (antiguedad >= 5 && antiguedad < 10) ? (total*0.3) : antiguedad < 15 ? (total*0.5) : antiguedad < 20 ? (total*0.7) : total;
+		if(empleado.tieneConyuge()) 
+			total+=this.getMontoConyuge();
+		if(empleado.tieneHijos()) 
+			total+=this.getMontoHijos();
+		
+		long ant = empleado.getAntiguedad();
+		total += (ant >= 5 && ant < 10) ? (total*0.3) : ant < 15 ? (total*0.5) : ant < 20 ? (total*0.7) : total;
 		
 		return total;
 	}

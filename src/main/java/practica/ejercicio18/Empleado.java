@@ -1,6 +1,7 @@
 package practica.ejercicio18;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +39,10 @@ public class Empleado {
 	
 	public List<Contrato> getContratosVencidos() {
 		return this.contratos.stream().filter(c -> c.estaVencido()).toList();
+	}
+	
+	public long getAntiguedad() {
+		return ChronoUnit.DAYS.between(LocalDate.now(), this.getFechaInicio());
 	}
 
 	public String getNombre() {

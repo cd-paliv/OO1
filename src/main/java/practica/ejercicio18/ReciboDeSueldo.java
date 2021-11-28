@@ -17,7 +17,7 @@ public class ReciboDeSueldo {
 		this.nombre = empleado.getNombre();
 		this.apellido = empleado.getApellido();
 		this.cuil = empleado.getCuil();
-		this.antiguedad = ChronoUnit.DAYS.between(LocalDate.now(), empleado.getFechaInicio());
+		this.antiguedad = empleado.getAntiguedad();
 		this.fecha = LocalDate.now();
 		this.total = empleado.getContratoActual().getMontoACobrar();
 	}
